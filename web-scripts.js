@@ -13,10 +13,12 @@
 
   makeAGuessButton.addEventListener('click', function (event) {
     var newGuessString = guessInput.value.trim()
-    var newGuess = parseInt(guessInput.value, 10)
+    var newGuess = parseInt(newGuessString, 10)
     var guessText = ''
 
-    if (!/^[0-9]+$/.test(newGuessString) || newGuess < 0 || newGuess > 100) {
+    if (
+      !/^[0-9]+$/.test(newGuessString) || newGuess < 0 || MAX_NUMBER < newGuess
+    ) {
       guessText = '(Error: Guess must be an integer between 0' + N_DASH +
         MAX_NUMBER + ' (inclusive)!)'
     } else if (newGuess === numberToGuess) {
