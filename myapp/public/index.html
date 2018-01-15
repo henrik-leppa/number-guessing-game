@@ -39,22 +39,19 @@
       <p>
         Guess the correct integer between 0&ndash;100 (inclusive)!
       </p>
-      <p>
-        <label>
-          New guess:<br>
-          <input type="number" id="guess-input">
-        </label>
-      </p>
-      <p>
-        <button type="button" id="make-a-guess-button">
-          Make a guess
-        </button>
-      </p>
-      <p>
-        Last guess:<br>
-        <output id="last-guess-output">(None yet)</output>
-      </p>
+      <form method="post" action="/guess">
+        <p>
+          <label>
+            New guess:<br>
+            <input type="number" name="value">
+          </label>
+        </p>
+        <p>
+          <button type="submit">
+            Make a guess
+          </button>
+        </p>
+      </form>
     </main>
-    <script src="./web-scripts.js"></script>
   </body>
 </html>
