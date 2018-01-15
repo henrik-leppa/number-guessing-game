@@ -1,4 +1,5 @@
 const express = require('express')
+const port = 3000
 const app = express()
 app.use(express.static('myapp/public'))
 app.use(express.urlencoded({ extended: false }))
@@ -33,4 +34,6 @@ app.post('/guess', (request, response) => {
   response.send(guessText)
 })
 
-app.listen(3000, () => console.log('Listening on port 3000.'))
+app.listen(port, () => {
+  console.log('App usable at: http://localhost:' + port + '/')
+})
