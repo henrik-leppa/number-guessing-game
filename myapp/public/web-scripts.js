@@ -9,10 +9,15 @@
   makeAGuessButton.addEventListener('click', function (event) {
     var newGuessString = guessInput.value
 
-    fetch(new Request('/guess'), {
+    fetch('/guess', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ value: newGuessString })
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        value: newGuessString
+      })
     }).then(function (response) {
       return response.text()
     }).then(function (text) {
